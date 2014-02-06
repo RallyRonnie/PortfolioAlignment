@@ -324,6 +324,7 @@
                     showLabel: true,
                     type: 'typeDefinition',
                     attribute: 'Name',
+                    defaultDisplayValue: 'Epic',
                     order: 'Ordinal desc',
                     fetch: 'Ordinal,TypePath',
                     query: '((Parent.Name = "Portfolio Item") and (Creatable = true))'
@@ -551,6 +552,7 @@
                     pie = new dojox.charting.Chart2D(div_id);
                     pie.addPlot("default", pie_config);
                     pie.addSeries(title, data);
+                    var mag = new dojox.charting.action2d.MoveSlice(pie,"default");
                     //var tip = new dojox.charting.action2d.Tooltip( pie, "default" );
                     var tip = new dojox.charting.action2d.Tooltip(pie, "default", { text: function (e) {
                         var text = "<em>None</em><br/>";
